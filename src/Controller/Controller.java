@@ -68,7 +68,6 @@ public class Controller implements ActionListener,ListSelectionListener {
         frame.getInvDateL().setText(currentINV.getDate());
         frame.getCustNameL().setText(currentINV.getName());
         frame.getInvTotalL().setText(""+currentINV.getTotal());
-        System.out.println("Controller.Controller.valueChanged()");
     }
     
     private void save() {
