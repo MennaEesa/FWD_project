@@ -131,35 +131,27 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane3" min="-2" pref="376" max="-2" attributes="0"/>
+                  <Component id="invItemL" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="InvTotalL" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                              <Component id="invTotalField" min="-2" pref="87" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="InvNumField" max="32767" attributes="0"/>
+                          <Component id="invTotalField" alignment="1" pref="87" max="32767" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="invDateText" alignment="0" max="32767" attributes="0"/>
+                              <Component id="custNameText" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane3" min="-2" pref="376" max="-2" attributes="0"/>
-                          <Component id="invItemL" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="InvNumL" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="InvDateL" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="CustNameL" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="invDateText" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="InvNumField" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="custNameText" alignment="0" max="32767" attributes="0"/>
+                          <Component id="InvTotalL" min="-2" pref="85" max="-2" attributes="0"/>
+                          <Component id="InvDateL" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="CustNameL" min="-2" pref="168" max="-2" attributes="0"/>
+                          <Component id="InvNumL" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
+              <EmptySpace pref="182" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
@@ -185,21 +177,26 @@
                           <Component id="invoicesTable" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="InvNumField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="365" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="365" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="InvDateL" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="invDateText" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="InvDateL" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="invDateText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="CustNameL" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="custNameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CustNameL" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="InvTotalL" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="invTotalField" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -268,29 +265,29 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="HeaderTable.getSelectionModel().addListSelectionListener(controller);&#xd;&#xa;"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="HeaderTable.getSelectionModel().addListSelectionListener(controller);&#xd;&#xa;HeaderTable.setModel(getInvTable());&#xd;&#xa;"/>
           </AuxValues>
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="InvNumL">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Invoice number"/>
+        <Property name="text" type="java.lang.String" value="."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="InvDateL">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Invoice Date"/>
+        <Property name="text" type="java.lang.String" value="."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="CustNameL">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Customer Name"/>
+        <Property name="text" type="java.lang.String" value="."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="InvTotalL">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Invoice Total"/>
+        <Property name="text" type="java.lang.String" value="."/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -357,24 +354,24 @@
         <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="deleteItemBTN.addActionListener(controller);"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="invDateText">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="invDateTextActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="custNameText">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="custNameTextActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="InvNumField">
       <Properties>
-        <Property name="text" type="java.lang.String" value="."/>
+        <Property name="text" type="java.lang.String" value="Invoice number"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="invTotalField">
       <Properties>
-        <Property name="text" type="java.lang.String" value="."/>
+        <Property name="text" type="java.lang.String" value="Invoice Total"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="custNameText">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Customer Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="invDateText">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Invoice Date"/>
       </Properties>
     </Component>
   </SubComponents>

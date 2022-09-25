@@ -43,7 +43,7 @@ public class HeaderTableModel extends AbstractTableModel{
         case 1: return invoice.getDate();
         case 2: return invoice.getName();
         case 3: return invoice.getTotal();
-        default: return "wrong answer"; 
+        default: return ""; 
     }
     }
     

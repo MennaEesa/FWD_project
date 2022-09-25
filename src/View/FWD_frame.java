@@ -44,6 +44,7 @@ public class FWD_frame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         HeaderTable = new javax.swing.JTable();
         HeaderTable.getSelectionModel().addListSelectionListener(controller);
+        HeaderTable.setModel(getInvTable());
         InvNumL = new javax.swing.JLabel();
         InvDateL = new javax.swing.JLabel();
         CustNameL = new javax.swing.JLabel();
@@ -59,10 +60,10 @@ public class FWD_frame extends javax.swing.JFrame {
         newItemBTN.addActionListener(controller);
         deleteItemBTN = new javax.swing.JButton();
         deleteItemBTN.addActionListener(controller);
-        invDateText = new javax.swing.JTextField();
-        custNameText = new javax.swing.JTextField();
         InvNumField = new javax.swing.JLabel();
         invTotalField = new javax.swing.JLabel();
+        custNameText = new javax.swing.JLabel();
+        invDateText = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         loadMenuItem = new javax.swing.JMenuItem();
@@ -121,13 +122,13 @@ public class FWD_frame extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(HeaderTable);
 
-        InvNumL.setText("Invoice number");
+        InvNumL.setText(".");
 
-        InvDateL.setText("Invoice Date");
+        InvDateL.setText(".");
 
-        CustNameL.setText("Customer Name");
+        CustNameL.setText(".");
 
-        InvTotalL.setText("Invoice Total");
+        InvTotalL.setText(".");
 
         LineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -162,21 +163,13 @@ public class FWD_frame extends javax.swing.JFrame {
 
         deleteItemBTN.setText("Delete Item");
 
-        invDateText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                invDateTextActionPerformed(evt);
-            }
-        });
+        InvNumField.setText("Invoice number");
 
-        custNameText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                custNameTextActionPerformed(evt);
-            }
-        });
+        invTotalField.setText("Invoice Total");
 
-        InvNumField.setText(".");
+        custNameText.setText("Customer Name");
 
-        invTotalField.setText(".");
+        invDateText.setText("Invoice Date");
 
         jMenu1.setText("File");
 
@@ -200,27 +193,22 @@ public class FWD_frame extends javax.swing.JFrame {
                     .addComponent(invoicesTable))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(invItemL)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(InvNumField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(invTotalField, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(invDateText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(custNameText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(InvTotalL)
-                                .addGap(42, 42, 42)
-                                .addComponent(invTotalField, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(invItemL))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(InvNumL)
-                            .addComponent(InvDateL)
-                            .addComponent(CustNameL))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(invDateText)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(InvNumField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(custNameText)))))
+                            .addComponent(InvTotalL, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(InvDateL, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CustNameL, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(InvNumL, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(182, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(createInvBTN)
@@ -242,18 +230,20 @@ public class FWD_frame extends javax.swing.JFrame {
                             .addComponent(InvNumL)
                             .addComponent(invoicesTable)
                             .addComponent(InvNumField))
-                        .addGap(7, 7, 7)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(InvDateL)
+                                    .addComponent(invDateText)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(InvDateL)
-                            .addComponent(invDateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CustNameL)
-                            .addComponent(custNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(custNameText)
+                            .addComponent(CustNameL))
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(InvTotalL)
                             .addComponent(invTotalField))
@@ -282,14 +272,6 @@ public class FWD_frame extends javax.swing.JFrame {
     private void createInvBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createInvBTNActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_createInvBTNActionPerformed
-
-    private void invDateTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_invDateTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_invDateTextActionPerformed
-
-    private void custNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custNameTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_custNameTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -320,6 +302,7 @@ public class FWD_frame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FWD_frame().setVisible(true);
             }
@@ -335,10 +318,10 @@ public class FWD_frame extends javax.swing.JFrame {
     private javax.swing.JLabel InvTotalL;
     private javax.swing.JTable LineTable;
     private javax.swing.JButton createInvBTN;
-    private javax.swing.JTextField custNameText;
+    private javax.swing.JLabel custNameText;
     private javax.swing.JButton deleteItemBTN;
     private javax.swing.JButton deleteIvcBTN;
-    private javax.swing.JTextField invDateText;
+    private javax.swing.JLabel invDateText;
     private javax.swing.JLabel invItemL;
     private javax.swing.JLabel invTotalField;
     private javax.swing.JLabel invoicesTable;
@@ -361,6 +344,7 @@ public class FWD_frame extends javax.swing.JFrame {
     private HeaderTableModel invTable ;
 
     public ArrayList<InvoiceHeader> getInvoices() {
+        if(invoices == null) invoices = new ArrayList<>();
         return invoices;
     }
 
@@ -373,6 +357,9 @@ public class FWD_frame extends javax.swing.JFrame {
     }
 
     public HeaderTableModel getInvTable() {
+         if (invTable == null) {
+           invTable = new HeaderTableModel(getInvoices());
+        }
         return invTable;
     }
 
@@ -420,5 +407,13 @@ public class FWD_frame extends javax.swing.JFrame {
         return controller;
     }
 
-  
+    public int getNextInvNumb(){
+        int numb = 0;
+        for(InvoiceHeader header : invoices) {
+            if (header.getNum()>numb) 
+                numb = header.getNum();
+        }
+        return ++ numb ;
+        
+    }
 }

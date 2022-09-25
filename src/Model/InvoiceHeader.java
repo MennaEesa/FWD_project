@@ -17,6 +17,10 @@ private String date;
 private String name;
 private ArrayList<invoiceLine>lines;
 
+ public InvoiceHeader(){
+     
+ }
+
     public InvoiceHeader(int num, String date, String name) {
         this.num = num;
         this.date = date;
@@ -26,7 +30,7 @@ private ArrayList<invoiceLine>lines;
     public double getTotal(){
 
       double total=0.0;
-        for(invoiceLine line :lines)
+        for(invoiceLine line :getLines())
         {
             total += line.getTotalLine();
     } 
@@ -68,6 +72,9 @@ private ArrayList<invoiceLine>lines;
     public String toString() {
         return "InvoiceHeader{" + "num=" + num + ", date=" + date + ", name=" + name + '}';
     }
-       
+    
+  public String getFile_CSV(){
+      return num + "," + date + "," + name ;
+  }
 
 }

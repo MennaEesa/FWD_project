@@ -21,6 +21,10 @@ public class LineTableModel extends AbstractTableModel {
         this.lineTabl = lineTabl;
     }
 
+    public ArrayList<invoiceLine> getLineTabl() {
+        return lineTabl;
+    }
+
 
     @Override
     public int getRowCount() {

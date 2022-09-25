@@ -22,9 +22,6 @@ public class invoiceLine {
         this.inv = inv;
     }
 
-    public invoiceLine(int invoiceNumb, String itemName, double itemPrice, int count, InvoiceHeader inv) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public double getTotalLine(){
         return count*price;
@@ -74,5 +71,8 @@ public class invoiceLine {
     public void setItem(String item) {
         this.item = item;
     }
-
+ public String getFile_CSV(){
+      return inv.getNum() + "," + item + "," + price + "," + count ;
+  }
 }
+
