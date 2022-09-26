@@ -125,22 +125,16 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" min="-2" pref="365" max="-2" attributes="0"/>
-                  <Component id="invoicesTable" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="jScrollPane2" min="-2" pref="365" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane3" min="-2" pref="376" max="-2" attributes="0"/>
-                  <Component id="invItemL" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="InvNumField" max="32767" attributes="0"/>
                           <Component id="invTotalField" alignment="1" pref="87" max="32767" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="invDateText" alignment="0" max="32767" attributes="0"/>
-                              <Component id="custNameText" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="invDateText" alignment="0" max="32767" attributes="0"/>
+                          <Component id="custNameText" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -174,7 +168,6 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="InvNumL" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="invoicesTable" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="InvNumField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -201,9 +194,7 @@
                           <Component id="InvTotalL" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="invTotalField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="invItemL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="213" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -306,16 +297,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="invoicesTable">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Invoices Table"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="invItemL">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Invoice Items"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="createInvBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="Create New Invoce"/>

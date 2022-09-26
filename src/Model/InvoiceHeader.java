@@ -15,7 +15,7 @@ public class InvoiceHeader {
 private int num;
 private String date;
 private String name;
-private ArrayList<invoiceLine>lines;
+private ArrayList<InvoiceLine>lines;
 
  public InvoiceHeader(){
      
@@ -30,13 +30,13 @@ private ArrayList<invoiceLine>lines;
     public double getTotal(){
 
       double total=0.0;
-        for(invoiceLine line :getLines())
+        for(InvoiceLine line :getLines())
         {
             total += line.getTotalLine();
     } 
         return total;
     }
-    public ArrayList<invoiceLine> getLines() {
+    public ArrayList<InvoiceLine> getLines() {
         if(lines == null){
             lines = new ArrayList<>();
         }

@@ -9,13 +9,13 @@ package Model;
  *
  * @author Menna
  */
-public class invoiceLine {
+public class InvoiceLine {
     private String item;
     private int count;
     private double price;
     private InvoiceHeader inv;
 
-    public invoiceLine(String name, int count, double price, InvoiceHeader inv,int number) {
+    public InvoiceLine(String name, int count, double price, InvoiceHeader inv) {
         this.item = name;
         this.count = count;
         this.price = price;

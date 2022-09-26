@@ -14,14 +14,14 @@ import javax.swing.table.AbstractTableModel;
  */
 public class LineTableModel extends AbstractTableModel {
     
-    private ArrayList<invoiceLine> lineTabl;
+    private ArrayList<InvoiceLine> lineTabl;
         private String[] columns={"numb","Item name", "Item Count", "Item Price","Total"};
 
-    public LineTableModel(ArrayList<invoiceLine> lineTabl) {
+    public LineTableModel(ArrayList<InvoiceLine> lineTabl) {
         this.lineTabl = lineTabl;
     }
 
-    public ArrayList<invoiceLine> getLineTabl() {
+    public ArrayList<InvoiceLine> getLineTabl() {
         return lineTabl;
     }
 
@@ -42,7 +42,7 @@ public class LineTableModel extends AbstractTableModel {
     }
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        invoiceLine line= lineTabl.get(rowIndex);
+        InvoiceLine line= lineTabl.get(rowIndex);
         
         switch(columnIndex){
         case 0: return line.getInv().getNum();

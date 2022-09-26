@@ -8,7 +8,7 @@ package Controller;
 import Model.HeaderTableModel;
 import Model.InvoiceHeader;
 import Model.LineTableModel;
-import Model.invoiceLine;
+import Model.InvoiceLine;
 import View.FWD_frame;
 import View.HeaderScreen;
 import View.ItemScreen;
@@ -107,7 +107,7 @@ public class Controller implements ActionListener,ListSelectionListener {
             header += InvCSV;
             header += "\n";
             
-            for(invoiceLine line : invoice.getLines()){
+            for(InvoiceLine line : invoice.getLines()){
                 String lineCSV =line.getFile_CSV();
                 items += lineCSV ;
                 items += "\n";
@@ -141,8 +141,8 @@ public class Controller implements ActionListener,ListSelectionListener {
     }
 
     private void load() {
+       JFileChooser fc =new JFileChooser();
         try{
-        JFileChooser fc =new JFileChooser();
        int result =  fc.showOpenDialog(frame);
         if (result == JFileChooser.APPROVE_OPTION){
            File headerFile = fc.getSelectedFile();
@@ -176,10 +176,9 @@ public class Controller implements ActionListener,ListSelectionListener {
              List<String> lineLines = Files.readAllLines(linePath);
              System.out.println("Invoioce Line have been read  ");
              
-         ArrayList<invoiceLine> linesArr =new ArrayList<>();
          for(String lineLine : lineLines){
              try{
-          String[] lineSplits = lineLine.split(",");
+          String lineSplits[] = lineLine.split(",");
           int invoiceNumb = Integer.parseInt(lineSplits[0]) ;
          String itemName = lineSplits[1];
          double  itemPrice = Double.parseDouble( lineSplits[2]);
@@ -192,7 +191,7 @@ public class Controller implements ActionListener,ListSelectionListener {
              }
          }
          
-         invoiceLine line= new invoiceLine(itemName, count, itemPrice, inv, count);
+         InvoiceLine line= new InvoiceLine(itemName, count, itemPrice, inv);
          inv.getLines().add(line);
          }catch (Exception ex){
                  ex.printStackTrace();
@@ -306,7 +305,7 @@ public class Controller implements ActionListener,ListSelectionListener {
         int selectedInvoice = frame.getHeaderTable().getSelectedRow();
         if(selectedInvoice != -1){
         InvoiceHeader invoice =frame.getInvoices().get(selectedInvoice);
-        invoiceLine line = new invoiceLine(itemName, count, price, invoice, count);
+        InvoiceLine line = new InvoiceLine(itemName, count, price, invoice);
         invoice.getLines().add(line);
         LineTableModel lineTableModel = (LineTableModel) frame.getLineTable().getModel();
         lineTableModel.fireTableDataChanged();
