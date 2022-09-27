@@ -45,10 +45,6 @@ public class FWD_frame extends javax.swing.JFrame {
         HeaderTable = new javax.swing.JTable();
         HeaderTable.getSelectionModel().addListSelectionListener(controller);
         HeaderTable.setModel(getInvTable());
-        InvNumL = new javax.swing.JLabel();
-        InvDateL = new javax.swing.JLabel();
-        CustNameL = new javax.swing.JLabel();
-        InvTotalL = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         LineTable = new javax.swing.JTable();
         createInvBTN = new javax.swing.JButton();
@@ -58,10 +54,14 @@ public class FWD_frame extends javax.swing.JFrame {
         newItemBTN.addActionListener(controller);
         deleteItemBTN = new javax.swing.JButton();
         deleteItemBTN.addActionListener(controller);
-        InvNumField = new javax.swing.JLabel();
-        invTotalField = new javax.swing.JLabel();
-        custNameText = new javax.swing.JLabel();
-        invDateText = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        InvNumL = new javax.swing.JLabel();
+        InvDateL = new javax.swing.JLabel();
+        CustNameL = new javax.swing.JLabel();
+        InvTotalL = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         loadMenuItem = new javax.swing.JMenuItem();
@@ -120,14 +120,6 @@ public class FWD_frame extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(HeaderTable);
 
-        InvNumL.setText(".");
-
-        InvDateL.setText(".");
-
-        CustNameL.setText(".");
-
-        InvTotalL.setText(".");
-
         LineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -157,13 +149,21 @@ public class FWD_frame extends javax.swing.JFrame {
 
         deleteItemBTN.setText("Delete Item");
 
-        InvNumField.setText("Invoice number");
+        jLabel1.setText("Invoice number");
 
-        invTotalField.setText("Invoice Total");
+        jLabel4.setText("Invoice Total");
 
-        custNameText.setText("Customer Name");
+        jLabel3.setText("Customer Name");
 
-        invDateText.setText("Invoice Date");
+        jLabel2.setText("Invoice Date");
+
+        InvNumL.setText(".");
+
+        InvDateL.setText(".");
+
+        CustNameL.setText(".");
+
+        InvTotalL.setText(".");
 
         jMenu1.setText("File");
 
@@ -182,62 +182,60 @@ public class FWD_frame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(InvNumField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(invTotalField, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                            .addComponent(invDateText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(custNameText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(23, 23, 23)
+                        .addComponent(createInvBTN)
+                        .addGap(54, 54, 54)
+                        .addComponent(deleteIvcBTN)
+                        .addGap(123, 123, 123)
+                        .addComponent(newItemBTN)
+                        .addGap(38, 38, 38)
+                        .addComponent(deleteItemBTN)
+                        .addGap(59, 59, 59))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(InvTotalL, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(InvDateL, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CustNameL, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(InvNumL, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(182, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(createInvBTN)
-                .addGap(54, 54, 54)
-                .addComponent(deleteIvcBTN)
-                .addGap(123, 123, 123)
-                .addComponent(newItemBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(deleteItemBTN)
-                .addGap(39, 39, 39))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(23, 23, 23)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(CustNameL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(InvNumL, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                                        .addComponent(InvDateL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(InvTotalL, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(InvNumL)
-                            .addComponent(InvNumField))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(InvDateL)
-                                    .addComponent(invDateText)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addComponent(InvNumL))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(custNameText)
+                            .addComponent(jLabel2)
+                            .addComponent(InvDateL))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
                             .addComponent(CustNameL))
-                        .addGap(26, 26, 26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(InvTotalL)
-                            .addComponent(invTotalField))
-                        .addGap(51, 51, 51)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel4)
+                            .addComponent(InvTotalL))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -246,7 +244,7 @@ public class FWD_frame extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(deleteItemBTN)
                         .addComponent(newItemBTN)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -300,18 +298,18 @@ public class FWD_frame extends javax.swing.JFrame {
     private javax.swing.JLabel CustNameL;
     private javax.swing.JTable HeaderTable;
     private javax.swing.JLabel InvDateL;
-    private javax.swing.JLabel InvNumField;
     private javax.swing.JLabel InvNumL;
     private javax.swing.JLabel InvTotalL;
     private javax.swing.JTable LineTable;
     private javax.swing.JButton createInvBTN;
-    private javax.swing.JLabel custNameText;
     private javax.swing.JButton deleteItemBTN;
     private javax.swing.JButton deleteIvcBTN;
-    private javax.swing.JLabel invDateText;
-    private javax.swing.JLabel invTotalField;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
@@ -332,7 +330,24 @@ public class FWD_frame extends javax.swing.JFrame {
         if(invoices == null) invoices = new ArrayList<>();
         return invoices;
     }
-
+    
+    public void setInvoices(ArrayList<InvoiceHeader> invoices) {
+        this.invoices = invoices;
+    }
+    
+        public HeaderTableModel getInvTable() {
+         if (invTable == null) {
+           invTable = new HeaderTableModel(getInvoices());
+        }
+        return invTable;
+    }
+        
+        
+    public void setInvTable(HeaderTableModel invTable) {
+        this.invTable = invTable;
+    }
+    
+        
     public JLabel getInvTotal() {
         return InvTotalL;
     }
@@ -341,20 +356,6 @@ public class FWD_frame extends javax.swing.JFrame {
         this.InvTotalL = InvTotal;
     }
 
-    public HeaderTableModel getInvTable() {
-         if (invTable == null) {
-           invTable = new HeaderTableModel(getInvoices());
-        }
-        return invTable;
-    }
-
-    public void setInvTable(HeaderTableModel invTable) {
-        this.invTable = invTable;
-    }
-
-    public void setInvoices(ArrayList<InvoiceHeader> invoices) {
-        this.invoices = invoices;
-    }
 
     public JTable getHeaderTable() {
         return HeaderTable;
